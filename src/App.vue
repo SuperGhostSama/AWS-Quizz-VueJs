@@ -159,7 +159,7 @@ function incrementProgress() {
       Welcome To The AWS Quizz
     </h1>
     
-    <section class="quiz" v-if="!quizCompleted">
+    <section class="quiz border border-4" v-if="!quizCompleted">
       <div class="quiz-info">
         <span class="question"> {{ getCurrentQuestion.question }}</span>
         <span class="score">Score {{ score }}/{{ questions.length }} </span>
@@ -215,8 +215,10 @@ function incrementProgress() {
     </section>
 
     <section v-else>
-      <h2>You Have Finished The Quizz</h2>
-      <p>Your Score is {{ score }}/{{ questions.length }}</p>
+      <div class="border border-3 p-5 shadow">
+        <h2>You Have Finished The Quizz</h2>
+        <p>Your Score is {{ score }}/{{ questions.length }}</p>
+      </div>
     </section>
     
   </main>
@@ -249,7 +251,7 @@ h1{
   background-color: #a0a0a0;
   padding: 1rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
 
 }
 .quiz-info{
@@ -306,7 +308,7 @@ button{
   border: none;
   cursor: pointer;
   padding: 1rem 2rem;
-  margin-left: 12rem;
+  /* margin-left: 12rem; */
   background-color: #22ff00;
   color: #070707;
   font-weight: 700;
