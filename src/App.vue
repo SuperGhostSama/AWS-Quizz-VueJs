@@ -161,8 +161,8 @@ function incrementProgress() {
     
     <section class="quiz border border-4" v-if="!quizCompleted">
       <div class="quiz-info">
-        <span class="question"> {{ getCurrentQuestion.question }}</span>
-        <span class="score">Score {{ score }}/{{ questions.length }} </span>
+        <span class="question p-2"> {{ getCurrentQuestion.question }}</span>
+        <span class="score p-2">Score {{ score }}/{{ questions.length }} </span>
       </div>
 
 
@@ -225,16 +225,23 @@ function incrementProgress() {
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 *{
   margin :0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body{
-  background-color: #ffffff;
-  color: #000000;
+  background-image: url(https://media.discordapp.net/attachments/1022963358066016256/1084872495582154863/wp10474539-amazon-web-services-wallpapers.jpg?width=1187&height=670);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
 }
 .app{
   display: flex;
@@ -248,7 +255,7 @@ h1{
   margin-bottom: 2rem;
 }
 .quiz{
-  background-color: #a0a0a0;
+  
   padding: 1rem;
   width: 100%;
   max-width: 800px;
@@ -262,7 +269,7 @@ h1{
 }
 
 .quiz-info .question{
-  color : rgb(0, 0, 0);
+  color : rgb(255, 255, 255);
   font-size: 1.5rem;
 }
 .quiz-info .score{
