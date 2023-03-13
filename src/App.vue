@@ -140,22 +140,43 @@ const SetAnswer = e => {
 const NextQuestion =() => {
   if(currentQuestion.value < questions.value.length - 1){
     currentQuestion.value++
+    incrementProgress()
     return
   }
   quizCompleted.value = true
 }
+
+const progress = ref(0);
+function incrementProgress() {
+      progress.value++;
+}
+
 </script>
 
 <template>
   <main class="app">
     <h1>
-      The AWS Quizz
+      Welcome To The AWS Quizz
     </h1>
     
     <section class="quiz" v-if="!quizCompleted">
       <div class="quiz-info">
         <span class="question"> {{ getCurrentQuestion.question }}</span>
         <span class="score">Score {{ score }}/{{ questions.length }} </span>
+      </div>
+
+
+      <!-- ProgressBar -->
+      <div class="progress mb-3">
+        <div
+        class="progress-bar"
+        role="progressbar"
+        :style="{ width: (progress*100)/questions.length + '%' }"
+        :aria-valuenow="progress"
+        aria-valuemin="0"
+        aria-valuemax="100">
+        {{ (progress*100)/questions.length }}%
+        </div>
       </div>
 
       <div class="options">
